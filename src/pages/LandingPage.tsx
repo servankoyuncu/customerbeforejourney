@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { CalendlyEmbed } from '../components/CalendlyEmbed';
+import { LeadForm } from '../components/LeadForm';
 import { LANDING_CONTENT, type Lang } from './landingContent';
-
-const CALENDLY_URL = 'https://calendly.com/david-frenkel/analysis-insurances-and-finances';
 
 function scrollToBooking() {
   document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
@@ -119,7 +117,7 @@ export function LandingPage() {
           {t.bookingSubtitle}
         </p>
         <div className="mt-6">
-          <CalendlyEmbed url={CALENDLY_URL} />
+          <LeadForm t={t} />
         </div>
       </section>
 

@@ -34,6 +34,16 @@ export interface Database {
         Args: { p_token: string; p_question_key: string; p_answer: string };
         Returns: void;
       };
+      submit_lead: {
+        Args: {
+          p_first_name: string;
+          p_last_name: string;
+          p_phone: string;
+          p_email: string;
+          p_postal_code: string;
+        };
+        Returns: void;
+      };
     };
   };
 }

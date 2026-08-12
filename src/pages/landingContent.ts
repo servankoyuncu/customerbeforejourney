@@ -17,6 +17,25 @@ export interface LandingContent {
   bookingTitle: string;
   bookingSubtitle: string;
   footerNote: string;
+  form: {
+    firstName: string;
+    lastName: string;
+    phone: string;
+    email: string;
+    postalCode: string;
+    submit: string;
+    submitting: string;
+    error: string;
+    successTitle: string;
+    successBody: string;
+    successCta: string;
+    errors: {
+      required: string;
+      invalidEmail: string;
+      invalidPhone: string;
+      invalidPostalCode: string;
+    };
+  };
 }
 
 export const LANDING_CONTENT: Record<Lang, LandingContent> = {
@@ -73,6 +92,25 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     bookingSubtitle:
       '15 Minuten, unverbindlich. Wir schauen gemeinsam, wo Sie heute stehen und was sich für Sie lohnt.',
     footerNote: 'Ihre Angaben werden ausschliesslich zur Vorbereitung Ihres Gesprächs verwendet.',
+    form: {
+      firstName: 'Vorname',
+      lastName: 'Nachname',
+      phone: 'Telefonnummer',
+      email: 'E-Mail-Adresse',
+      postalCode: 'Postleitzahl',
+      submit: 'Weiter zur Terminwahl',
+      submitting: 'Wird gesendet …',
+      error: 'Bitte alle Felder korrekt ausfüllen.',
+      successTitle: 'Danke, {firstName}!',
+      successBody: 'Wählen Sie jetzt einen passenden Termin für Ihr kostenloses Gespräch mit David.',
+      successCta: 'Termin auswählen',
+      errors: {
+        required: 'Pflichtfeld',
+        invalidEmail: 'Bitte eine gültige E-Mail-Adresse eingeben',
+        invalidPhone: 'Bitte eine gültige Telefonnummer eingeben',
+        invalidPostalCode: 'Bitte eine gültige 4-stellige Postleitzahl eingeben',
+      },
+    },
   },
   en: {
     eyebrow: 'For expats in Switzerland',
@@ -127,5 +165,24 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     bookingSubtitle:
       "15 minutes, no obligation. We'll map out where you stand today and what's worth doing next.",
     footerNote: 'Your details are used exclusively to prepare for your conversation.',
+    form: {
+      firstName: 'First name',
+      lastName: 'Last name',
+      phone: 'Phone number',
+      email: 'Email address',
+      postalCode: 'Postal code',
+      submit: 'Continue to pick a time',
+      submitting: 'Sending …',
+      error: 'Please fill in all fields correctly.',
+      successTitle: 'Thanks, {firstName}!',
+      successBody: 'Now pick a time that works for your free consultation with David.',
+      successCta: 'Choose a time',
+      errors: {
+        required: 'Required',
+        invalidEmail: 'Please enter a valid email address',
+        invalidPhone: 'Please enter a valid phone number',
+        invalidPostalCode: 'Please enter a valid 4-digit postal code',
+      },
+    },
   },
 };
