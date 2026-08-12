@@ -23,6 +23,7 @@ export interface LandingContent {
     phone: string;
     email: string;
     postalCode: string;
+    privacyNote: string;
     submit: string;
     submitting: string;
     error: string;
@@ -98,6 +99,8 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       phone: 'Telefonnummer',
       email: 'E-Mail-Adresse',
       postalCode: 'Postleitzahl',
+      privacyNote:
+        'Ihre Angaben werden ausschliesslich zur Vereinbarung und Vorbereitung Ihres Termins verwendet und nicht an Dritte weitergegeben.',
       submit: 'Weiter zur Terminwahl',
       submitting: 'Wird gesendet …',
       error: 'Bitte alle Felder korrekt ausfüllen.',
@@ -171,6 +174,8 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       phone: 'Phone number',
       email: 'Email address',
       postalCode: 'Postal code',
+      privacyNote:
+        'Your details are used exclusively to arrange and prepare your appointment and are not shared with third parties.',
       submit: 'Continue to pick a time',
       submitting: 'Sending …',
       error: 'Please fill in all fields correctly.',

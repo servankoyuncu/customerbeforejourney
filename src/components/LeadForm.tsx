@@ -135,6 +135,7 @@ export function LeadForm({ t }: { t: LandingContent }) {
         />
         {fieldErrors.postalCode && <p className="mt-1 text-xs text-red-600">{fieldErrors.postalCode}</p>}
       </div>
+      <p className="text-xs leading-relaxed text-neutral-400">{t.form.privacyNote}</p>
       {status === 'error' && <p className="text-sm text-red-600">{t.form.error}</p>}
       <button
         type="submit"
