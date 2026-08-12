@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 import { PrepFlow } from './routes/PrepFlow';
+import { LandingPage } from './pages/LandingPage';
 
 function PrepRoute() {
   const { token } = useParams<{ token: string }>();
@@ -7,7 +8,7 @@ function PrepRoute() {
   return <PrepFlow token={token} />;
 }
 
-function NoToken() {
+function NotFound() {
   return (
     <div className="flex h-full min-h-svh flex-col items-center justify-center gap-2 bg-white px-6 text-center">
       <p className="text-lg font-medium text-neutral-900">Kein gültiger Link.</p>
@@ -21,8 +22,9 @@ function NoToken() {
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
       <Route path="/p/:token" element={<PrepRoute />} />
-      <Route path="*" element={<NoToken />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
