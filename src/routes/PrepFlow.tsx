@@ -107,11 +107,11 @@ function PrepSequence(props: {
       return (
         <Screen6Question
           selected={answer}
-          onSelect={(option) => {
-            setAnswer(option);
-            saveAnswer(option);
+          onSelect={setAnswer}
+          onNext={() => {
+            if (answer) saveAnswer(answer);
+            goTo(7);
           }}
-          onNext={() => goTo(7)}
           onBack={() => goTo(5)}
         />
       );
