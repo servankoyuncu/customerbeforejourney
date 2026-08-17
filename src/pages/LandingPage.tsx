@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { LeadForm } from '../components/LeadForm';
-import { LANDING_CONTENT, type Lang } from './landingContent';
+import { LANDING_CONTENT } from './landingContent';
+import { useLang } from '../hooks/useLang';
 import { SERVICE_ICONS } from './serviceIcons';
 import davidFrenkelPhoto from '../assets/david-frenkel.png';
 import davidFrenkelSuitPhoto from '../assets/david-frenkel-suit.png';
@@ -29,7 +31,7 @@ function QuoteIcon() {
 }
 
 export function LandingPage() {
-  const [lang, setLang] = useState<Lang>('en');
+  const [lang, setLang] = useLang();
   const t = LANDING_CONTENT[lang];
 
   useEffect(() => {
@@ -290,8 +292,16 @@ export function LandingPage() {
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
           <p>{t.footerCopyright}</p>
           <ul className="flex gap-6">
-            <li>{t.footerImpressum}</li>
-            <li>{t.footerPrivacy}</li>
+            <li>
+              <Link to="/impressum" className="hover:text-[var(--color-accent)]">
+                {t.footerImpressum}
+              </Link>
+            </li>
+            <li>
+              <Link to="/privacy" className="hover:text-[var(--color-accent)]">
+                {t.footerPrivacy}
+              </Link>
+            </li>
             <li>
               <a href="mailto:david@frenkelconsulting.com" className="hover:text-[var(--color-accent)]">
                 {t.footerContact}

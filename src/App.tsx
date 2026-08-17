@@ -1,6 +1,8 @@
 import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 import { PrepFlow } from './routes/PrepFlow';
 import { LandingPage } from './pages/LandingPage';
+import { ImpressumPage } from './pages/ImpressumPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 
 function PrepRoute() {
   const { token } = useParams<{ token: string }>();
@@ -23,6 +25,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/impressum" element={<ImpressumPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/p/:token" element={<PrepRoute />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
