@@ -43,9 +43,10 @@ export function LandingPage() {
           <button
             type="button"
             onClick={() => scrollTo('hero')}
-            className="text-[15px] font-bold tracking-tight text-[var(--color-accent)]"
+            className="flex items-center text-[15px] font-bold tracking-tight"
           >
-            Frenkel <span className="font-medium text-slate-500">Consulting</span>
+            <span className="rounded-md bg-slate-900 px-1.5 py-0.5 text-white">Insu</span>
+            <span className="text-[var(--color-accent)]">Finance</span>
           </button>
           <nav className="hidden items-center gap-7 sm:flex">
             <button type="button" onClick={() => scrollTo('services')} className="text-sm font-medium text-slate-500 hover:text-[var(--color-accent)]">
