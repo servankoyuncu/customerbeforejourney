@@ -12,11 +12,16 @@ function isValidPhone(value: string) {
   return digits.length >= 7 && digits.length <= 15;
 }
 
-type FieldErrors = Partial<Record<'firstName' | 'lastName' | 'phone' | 'email' | 'postalCode', string>>;
+type AppointmentType = 'vor_ort' | 'online';
+
+type FieldErrors = Partial<
+  Record<'firstName' | 'lastName' | 'appointmentType' | 'phone' | 'email' | 'postalCode', string>
+>;
 
 export function LeadForm({ t }: { t: LandingContent }) {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [appointmentType, setAppointmentType] = useState<AppointmentType | null>(null);
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [postalCode, setPostalCode] = useState('');
@@ -28,6 +33,7 @@ export function LeadForm({ t }: { t: LandingContent }) {
     const e = t.form.errors;
     if (!firstName.trim()) errors.firstName = e.required;
     if (!lastName.trim()) errors.lastName = e.required;
+    if (!appointmentType) errors.appointmentType = e.required;
     if (!phone.trim()) errors.phone = e.required;
     else if (!isValidPhone(phone)) errors.phone = e.invalidPhone;
     if (!email.trim()) errors.email = e.required;
@@ -41,7 +47,7 @@ export function LeadForm({ t }: { t: LandingContent }) {
     ev.preventDefault();
     const errors = validate();
     setFieldErrors(errors);
-    if (Object.keys(errors).length > 0) return;
+    if (Object.keys(errors).length > 0 || !appointmentType) return;
 
     setStatus('submitting');
     const { error } = await supabase.rpc('submit_lead', {
@@ -50,6 +56,7 @@ export function LeadForm({ t }: { t: LandingContent }) {
       p_phone: phone,
       p_email: email,
       p_postal_code: postalCode,
+      p_appointment_type: appointmentType,
     });
     if (error) {
       setStatus('error');
@@ -103,6 +110,28 @@ export function LeadForm({ t }: { t: LandingContent }) {
           />
           {fieldErrors.lastName && <p className="mt-1 text-xs text-red-600">{fieldErrors.lastName}</p>}
         </div>
+      </div>
+      <div>
+        <p className="mb-1.5 text-[13px] font-medium text-slate-600">{t.form.appointmentTypeQuestion}</p>
+        <div className="grid grid-cols-2 gap-3">
+          {(['vor_ort', 'online'] as const).map((type) => (
+            <button
+              key={type}
+              type="button"
+              onClick={() => setAppointmentType(type)}
+              className={`rounded-xl border px-4 py-3 text-[15px] font-medium transition-colors ${
+                appointmentType === type
+                  ? 'border-[var(--color-accent)] bg-[var(--color-accent)]/5 text-[var(--color-accent)]'
+                  : fieldErrors.appointmentType
+                    ? 'border-red-400 text-slate-700'
+                    : 'border-neutral-200 text-slate-700'
+              }`}
+            >
+              {type === 'vor_ort' ? t.form.appointmentTypeOnSite : t.form.appointmentTypeOnline}
+            </button>
+          ))}
+        </div>
+        {fieldErrors.appointmentType && <p className="mt-1 text-xs text-red-600">{fieldErrors.appointmentType}</p>}
       </div>
       <div>
         <input

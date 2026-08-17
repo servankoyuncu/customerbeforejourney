@@ -39,6 +39,9 @@ export interface LandingContent {
   form: {
     firstName: string;
     lastName: string;
+    appointmentTypeQuestion: string;
+    appointmentTypeOnSite: string;
+    appointmentTypeOnline: string;
     phone: string;
     email: string;
     postalCode: string;
@@ -152,7 +155,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       },
       {
         q: 'Welche Kantone decken Sie ab?',
-        a: 'Die ganze Schweiz. Die Beratung findet per Telefon oder Videoanruf statt, Ihr Kanton spielt also keine Rolle.',
+        a: 'Für Online-Beratungen die ganze Schweiz — Video- oder Telefongespräche funktionieren unabhängig von Ihrem Kanton. Vor-Ort-Termine sind ebenfalls möglich; die Details dazu stimmen wir individuell mit Ihnen ab, je nach Standort und Verfügbarkeit.',
       },
       {
         q: 'Was sollte ich für das Gespräch vorbereiten?',
@@ -170,6 +173,9 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     form: {
       firstName: 'Vorname',
       lastName: 'Nachname',
+      appointmentTypeQuestion: 'Wie möchten Sie das Gespräch führen?',
+      appointmentTypeOnSite: 'Vor Ort',
+      appointmentTypeOnline: 'Online',
       phone: 'Telefonnummer',
       email: 'E-Mail-Adresse',
       postalCode: 'Postleitzahl',
@@ -281,7 +287,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       },
       {
         q: 'Which cantons do you cover?',
-        a: "All of Switzerland. Consultations take place by phone or video call, so your canton doesn't matter.",
+        a: "All of Switzerland for online consultations — video or phone calls work regardless of your canton. In-person meetings are also possible; we'll coordinate the details with you individually depending on location and availability.",
       },
       {
         q: 'What should I prepare for the call?',
@@ -299,6 +305,9 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     form: {
       firstName: 'First name',
       lastName: 'Last name',
+      appointmentTypeQuestion: 'How would you like to meet?',
+      appointmentTypeOnSite: 'In-person',
+      appointmentTypeOnline: 'Online',
       phone: 'Phone number',
       email: 'Email address',
       postalCode: 'Postal code',
