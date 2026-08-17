@@ -51,6 +51,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       'Wer in die Schweiz zieht, verliert schnell den Überblick: die falsche Krankenkasse, verpasste Fristen, liegen gelassenes Geld in der Vorsorge. Die meisten Fehler passieren nicht aus Unwissen, sondern weil niemand sie einmal in Ruhe erklärt hat.',
     credentialsTitle: 'Ihr Berater: David Frenkel',
     credentialsPoints: [
+      'Finanzplaner mit eidg. Fachausweis (FA)',
       '5 Jahre internationale Ausbildung in Israel sowie mehrere Abschlüsse und Zertifizierungen in Versicherung, Vorsorge und Finanzberatung',
       'Einer der wenigen wirklich unabhängigen Berater der Schweiz — Zugang zu über 60 Partnergesellschaften',
       'Berät im Interesse seiner Kundschaft, nicht im Interesse einer einzelnen Versicherung',
@@ -126,6 +127,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       "Most people who move to Switzerland lose track fast: the wrong health insurance plan, missed deadlines, money sitting in a pension account nobody explained. Most mistakes don't come from not knowing — they come from nobody taking the time to walk you through it.",
     credentialsTitle: 'Your advisor: David Frenkel',
     credentialsPoints: [
+      'Financial Planner with a Federal Diploma (eidg. Fachausweis)',
       '5 years of international training in Israel, plus multiple degrees and certifications in insurance, pensions, and financial advisory',
       'One of the few truly independent advisors in Switzerland — access to 60+ partner companies',
       "Works in your interest, not any single insurer's",

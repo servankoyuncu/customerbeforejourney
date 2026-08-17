@@ -7,7 +7,7 @@ function scrollToBooking() {
 }
 
 export function LandingPage() {
-  const [lang, setLang] = useState<Lang>('de');
+  const [lang, setLang] = useState<Lang>('en');
   const t = LANDING_CONTENT[lang];
 
   return (
