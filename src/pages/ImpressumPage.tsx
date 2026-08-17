@@ -51,11 +51,6 @@ export function ImpressumPage() {
         </section>
 
         <section className="mt-8">
-          <h2 className="text-sm font-bold uppercase tracking-wide text-slate-500">{t.intermediaryHeading}</h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-slate-500">{t.intermediaryPlaceholder}</p>
-        </section>
-
-        <section className="mt-8">
           <h2 className="text-sm font-bold uppercase tracking-wide text-slate-500">{t.liabilityHeading}</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-slate-700">{t.liabilityBody}</p>
         </section>

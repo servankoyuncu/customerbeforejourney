@@ -9,8 +9,6 @@ export interface ImpressumContent {
   contactDetails: string;
   registerHeading: string;
   registerDetails: string;
-  intermediaryHeading: string;
-  intermediaryPlaceholder: string;
   liabilityHeading: string;
   liabilityBody: string;
   copyrightHeading: string;
@@ -45,9 +43,6 @@ export const IMPRESSUM_CONTENT: Record<Lang, ImpressumContent> = {
     contactDetails: 'shero@marken-ding.com\n+41 76 786 15 75',
     registerHeading: 'Handelsregister',
     registerDetails: 'UID: CHE-160.366.764',
-    intermediaryHeading: 'Registrierung als Versicherungsvermittler',
-    intermediaryPlaceholder:
-      '[FINMA-Vermittlerregisternummer, falls als unabhängiger Versicherungsvermittler registriert — bitte ergänzen]',
     liabilityHeading: 'Haftungsausschluss',
     liabilityBody:
       'Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen. Verweise und Links auf Websites Dritter liegen ausserhalb unseres Verantwortungsbereichs; für deren Inhalte wird keine Haftung übernommen.',
@@ -64,9 +59,6 @@ export const IMPRESSUM_CONTENT: Record<Lang, ImpressumContent> = {
     contactDetails: 'shero@marken-ding.com\n+41 76 786 15 75',
     registerHeading: 'Commercial register',
     registerDetails: 'UID: CHE-160.366.764',
-    intermediaryHeading: 'Insurance intermediary registration',
-    intermediaryPlaceholder:
-      '[FINMA intermediary register number, if registered as an independent insurance intermediary — to be completed]',
     liabilityHeading: 'Disclaimer',
     liabilityBody:
       'The content of this website has been prepared with the greatest care. However, no guarantee is made as to its accuracy, completeness, or timeliness. References and links to third-party websites are outside our area of responsibility; no liability is accepted for their content.',
