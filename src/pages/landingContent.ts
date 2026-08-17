@@ -163,7 +163,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     bookingSubtitle:
       '15 Minuten, unverbindlich. Wir schauen gemeinsam, wo Sie heute stehen und was sich für Sie lohnt.',
     footerNote: 'Ihre Angaben werden ausschliesslich zur Vorbereitung Ihres Gesprächs verwendet.',
-    footerCopyright: '© 2026 Frenkel Consulting, Zürich. Alle Rechte vorbehalten.',
+    footerCopyright: '© 2026 InsuFinance, Zürich. Alle Rechte vorbehalten.',
     footerImpressum: 'Impressum',
     footerPrivacy: 'Datenschutz',
     footerContact: 'Kontakt',
@@ -292,7 +292,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     bookingSubtitle:
       "15 minutes, no obligation. We'll map out where you stand today and what's worth doing next.",
     footerNote: 'Your details are used exclusively to prepare for your conversation.',
-    footerCopyright: '© 2026 Frenkel Consulting, Zurich. All rights reserved.',
+    footerCopyright: '© 2026 InsuFinance, Zurich. All rights reserved.',
     footerImpressum: 'Impressum',
     footerPrivacy: 'Privacy Policy',
     footerContact: 'Contact',
