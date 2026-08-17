@@ -4,10 +4,11 @@ export interface ImpressumContent {
   title: string;
   back: string;
   providerHeading: string;
-  providerPlaceholder: string;
+  providerDetails: string;
   contactHeading: string;
+  contactDetails: string;
   registerHeading: string;
-  registerPlaceholder: string;
+  registerDetails: string;
   intermediaryHeading: string;
   intermediaryPlaceholder: string;
   liabilityHeading: string;
@@ -39,11 +40,11 @@ export const IMPRESSUM_CONTENT: Record<Lang, ImpressumContent> = {
     title: 'Impressum',
     back: 'Zurück zur Startseite',
     providerHeading: 'Anbieter dieser Website',
-    providerPlaceholder:
-      '[Rechtsform, z.B. Einzelunternehmen — bitte ergänzen]\n[Vollständige Geschäftsadresse — bitte ergänzen]\nSchweiz',
+    providerDetails: 'Social Media Koyuncu (MarkenDing)\nEinzelfirma\nRiedhofstrasse 92A\n8408 Winterthur\nSchweiz',
     contactHeading: 'Kontakt',
+    contactDetails: 'shero@marken-ding.com\n+41 76 786 15 75',
     registerHeading: 'Handelsregister',
-    registerPlaceholder: '[UID / CHE-Nummer, falls im Handelsregister eingetragen — bitte ergänzen]',
+    registerDetails: 'UID: CHE-160.366.764',
     intermediaryHeading: 'Registrierung als Versicherungsvermittler',
     intermediaryPlaceholder:
       '[FINMA-Vermittlerregisternummer, falls als unabhängiger Versicherungsvermittler registriert — bitte ergänzen]',
@@ -58,11 +59,11 @@ export const IMPRESSUM_CONTENT: Record<Lang, ImpressumContent> = {
     title: 'Impressum',
     back: 'Back to homepage',
     providerHeading: 'Website operator',
-    providerPlaceholder:
-      '[Legal form, e.g. sole proprietorship — to be completed]\n[Full business address — to be completed]\nSwitzerland',
+    providerDetails: 'Social Media Koyuncu (MarkenDing)\nSole proprietorship\nRiedhofstrasse 92A\n8408 Winterthur\nSwitzerland',
     contactHeading: 'Contact',
+    contactDetails: 'shero@marken-ding.com\n+41 76 786 15 75',
     registerHeading: 'Commercial register',
-    registerPlaceholder: '[UID / CHE number, if registered in the commercial register — to be completed]',
+    registerDetails: 'UID: CHE-160.366.764',
     intermediaryHeading: 'Insurance intermediary registration',
     intermediaryPlaceholder:
       '[FINMA intermediary register number, if registered as an independent insurance intermediary — to be completed]',

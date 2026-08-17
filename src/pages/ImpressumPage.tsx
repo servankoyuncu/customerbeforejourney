@@ -34,25 +34,20 @@ export function ImpressumPage() {
         <section className="mt-8">
           <h2 className="text-sm font-bold uppercase tracking-wide text-slate-500">{t.providerHeading}</h2>
           <p className="mt-2 whitespace-pre-line text-[15px] leading-relaxed text-slate-700">
-            InsuFinance
-            {'\n'}David Frenkel
-            {'\n'}
-            {t.providerPlaceholder}
+            {t.providerDetails}
           </p>
         </section>
 
         <section className="mt-8">
           <h2 className="text-sm font-bold uppercase tracking-wide text-slate-500">{t.contactHeading}</h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-slate-700">
-            david@frenkelconsulting.com
-            <br />
-            +41 76 501 51 02
+          <p className="mt-2 whitespace-pre-line text-[15px] leading-relaxed text-slate-700">
+            {t.contactDetails}
           </p>
         </section>
 
         <section className="mt-8">
           <h2 className="text-sm font-bold uppercase tracking-wide text-slate-500">{t.registerHeading}</h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-slate-500">{t.registerPlaceholder}</p>
+          <p className="mt-2 text-[15px] leading-relaxed text-slate-700">{t.registerDetails}</p>
         </section>
 
         <section className="mt-8">
