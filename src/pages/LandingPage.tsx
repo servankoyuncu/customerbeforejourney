@@ -3,6 +3,7 @@ import { LeadForm } from '../components/LeadForm';
 import { LANDING_CONTENT, type Lang } from './landingContent';
 import { SERVICE_ICONS } from './serviceIcons';
 import davidFrenkelPhoto from '../assets/david-frenkel.png';
+import davidFrenkelSuitPhoto from '../assets/david-frenkel-suit.png';
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -202,7 +203,7 @@ export function LandingPage() {
           <div className="relative flex justify-center">
             <div className="pointer-events-none absolute inset-x-0 top-[10%] bottom-0 rounded-full bg-[radial-gradient(ellipse_at_50%_65%,rgba(15,118,110,0.14)_0%,transparent_70%)]" />
             <img
-              src={davidFrenkelPhoto}
+              src={davidFrenkelSuitPhoto}
               alt="David Frenkel"
               className="relative w-full max-w-[260px] drop-shadow-[0_20px_40px_rgba(15,23,42,0.12)] sm:max-w-[320px]"
             />
