@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { LeadForm } from '../components/LeadForm';
 import { LANDING_CONTENT, type Lang } from './landingContent';
+import davidFrenkelPhoto from '../assets/david-frenkel.png';
 
 function scrollToBooking() {
   document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
@@ -68,15 +69,24 @@ export function LandingPage() {
 
       {/* Credentials */}
       <section className="mx-auto max-w-2xl px-6 py-12">
-        <h2 className="text-xl font-semibold text-neutral-900 sm:text-2xl">{t.credentialsTitle}</h2>
-        <ul className="mt-5 space-y-3">
-          {t.credentialsPoints.map((point) => (
-            <li key={point} className="flex gap-3 text-[15px] leading-relaxed text-neutral-700">
-              <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-[var(--color-accent)]" />
-              {point}
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-center sm:gap-10">
+          <img
+            src={davidFrenkelPhoto}
+            alt="David Frenkel"
+            className="h-64 w-auto flex-none object-contain"
+          />
+          <div>
+            <h2 className="text-xl font-semibold text-neutral-900 sm:text-2xl">{t.credentialsTitle}</h2>
+            <ul className="mt-5 space-y-3">
+              {t.credentialsPoints.map((point) => (
+                <li key={point} className="flex gap-3 text-[15px] leading-relaxed text-neutral-700">
+                  <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-[var(--color-accent)]" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </section>
 
       {/* Services */}
