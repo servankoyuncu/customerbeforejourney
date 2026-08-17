@@ -1,4 +1,4 @@
-import { useState, type CSSProperties } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import { PrepProvider, usePrep } from '../context/PrepContext';
 import { ScreenLoading } from '../screens/ScreenLoading';
 import { ScreenError } from '../screens/ScreenError';
@@ -23,6 +23,10 @@ export function PrepFlow({ token }: { token: string }) {
 
 function PrepFlowContent() {
   const { state } = usePrep();
+
+  useEffect(() => {
+    document.title = 'Ihre Terminvorbereitung';
+  }, []);
 
   if (state.status === 'loading') return <ScreenLoading />;
   if (state.status === 'error') return <ScreenError reason={state.reason} />;
