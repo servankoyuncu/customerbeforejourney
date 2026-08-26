@@ -1,5 +1,6 @@
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { supabase } from '../lib/supabase';
+import { useLandingTracking } from '../context/LandingTrackingContext';
 import type { LandingContent } from '../pages/landingContent';
 
 const GOOGLE_BOOKING_URL = 'https://calendar.app.google/CbniCLM4n93HswHdA';
@@ -19,6 +20,8 @@ type FieldErrors = Partial<
 >;
 
 export function LeadForm({ t }: { t: LandingContent }) {
+  const { track } = useLandingTracking();
+  const formStartedRef = useRef(false);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [appointmentType, setAppointmentType] = useState<AppointmentType | null>(null);
@@ -43,11 +46,22 @@ export function LeadForm({ t }: { t: LandingContent }) {
     return errors;
   }
 
+  function handleFormFocus() {
+    if (!formStartedRef.current) {
+      formStartedRef.current = true;
+      track('form_start');
+    }
+  }
+
   async function handleSubmit(ev: FormEvent) {
     ev.preventDefault();
+    track('form_submit');
     const errors = validate();
     setFieldErrors(errors);
-    if (Object.keys(errors).length > 0 || !appointmentType) return;
+    if (Object.keys(errors).length > 0 || !appointmentType) {
+      track('form_error', { fields: Object.keys(errors) });
+      return;
+    }
 
     setStatus('submitting');
     const { error } = await supabase.rpc('submit_lead', {
@@ -60,9 +74,11 @@ export function LeadForm({ t }: { t: LandingContent }) {
     });
     if (error) {
       setStatus('error');
+      track('form_error', { reason: 'rpc', code: error.code });
       return;
     }
     setStatus('done');
+    track('form_success');
   }
 
   if (status === 'done') {
@@ -90,7 +106,7 @@ export function LeadForm({ t }: { t: LandingContent }) {
     }`;
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="mx-auto max-w-sm space-y-3 text-left">
+    <form onSubmit={handleSubmit} onFocusCapture={handleFormFocus} noValidate className="mx-auto max-w-sm space-y-3 text-left">
       <div className="grid grid-cols-2 gap-3">
         <div>
           <input
