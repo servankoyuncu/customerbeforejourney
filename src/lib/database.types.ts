@@ -45,6 +45,18 @@ export interface Database {
         };
         Returns: void;
       };
+      submit_lead_magnet: {
+        Args: { p_email: string };
+        Returns: void;
+      };
+      init_landing_session: {
+        Args: { p_session_token: string; p_referrer: string; p_language: string };
+        Returns: void;
+      };
+      track_landing_event: {
+        Args: { p_session_token: string; p_event_type: string; p_payload: Record<string, unknown> };
+        Returns: void;
+      };
     };
   };
 }

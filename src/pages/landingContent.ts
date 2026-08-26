@@ -11,8 +11,12 @@ export interface LandingContent {
   ctaLabel: string;
   secondaryCtaLabel: string;
   heroMicro: string;
+  heroTrustBadges: string[];
   painTitle: string;
   painBody: string;
+  urgencyTitle: string;
+  urgencySubtitle: string;
+  urgencyPoints: { title: string; body: string }[];
   howTitle: string;
   howSubtitle: string;
   howSteps: { title: string; body: string }[];
@@ -26,12 +30,24 @@ export interface LandingContent {
   testimonialsTitle: string;
   testimonialsSubtitle: string;
   testimonials: { quote: string; name: string; role: string }[];
+  trustTitle: string;
+  trustSubtitle: string;
+  trustBadges: { title: string; desc: string }[];
   faqTitle: string;
   faqSubtitle: string;
   faq: { q: string; a: string }[];
   bookingTitle: string;
   bookingSubtitle: string;
-  footerNote: string;
+  repeatedCtaTitle: string;
+  repeatedCtaSubtitle: string;
+  leadMagnetTitle: string;
+  leadMagnetSubtitle: string;
+  leadMagnetCta: string;
+  leadMagnetInputLabel: string;
+  leadMagnetPrivacy: string;
+  leadMagnetSuccessTitle: string;
+  leadMagnetSuccessBody: string;
+  leadMagnetSuccessCta: string;
   footerCopyright: string;
   footerImpressum: string;
   footerPrivacy: string;
@@ -71,18 +87,39 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     headlineEmphasis: 'Sie müssen es nicht allein durchschauen.',
     subheadline:
       'Krankenkasse, Vorsorge, Steuern, Säule 3a — alles neu, alles auf einmal. Kostenloses Erstgespräch mit einem unabhängigen Finanzplaner, der auf Expats spezialisiert ist.',
-    ctaLabel: 'Kostenloses Gespräch buchen',
+    ctaLabel: 'Kostenlosen 30-Minuten-Call buchen',
     secondaryCtaLabel: 'So läuft es ab',
-    heroMicro: 'Kostenloses 15-Minuten-Gespräch · Unverbindlich · Deutsch & Englisch',
+    heroMicro: 'Kostenloses 30-Minuten-Gespräch · Unverbindlich · Deutsch & Englisch',
+    heroTrustBadges: [
+      'Unabhängig · 60+ Partner',
+      'Eidg. Fachausweis',
+      'Schweizer Datenschutz',
+    ],
     painTitle:
       'Die meisten Fehler passieren nicht aus Unwissen. Sondern weil niemand sie einmal in Ruhe erklärt hat.',
     painBody:
       'Wer in die Schweiz zieht, verliert schnell den Überblick: die falsche Krankenkasse, verpasste Fristen, liegen gelassenes Geld in der Vorsorge. Ein kurzes Gespräch jetzt kann Ihnen später tausende Franken — und viel Frust — sparen.',
+    urgencyTitle: 'Was passiert, wenn Sie nicht handeln?',
+    urgencySubtitle: 'Jedes Quartal, in dem Sie warten, kosten Sie wahrscheinlich Geld.',
+    urgencyPoints: [
+      {
+        title: 'Säule 3a verpassen',
+        body: 'Wer die Einzahlungsfrist verpasst, lässt jedes Jahr Steuerersparnisse liegen — bei mittleren Einkommen schnell ein vierstelliger Betrag.',
+      },
+      {
+        title: 'Falsche Krankenkasse behalten',
+        body: 'Mit dem falschen Modell und der falschen Franchise zahlen viele Expats jährlich Hunderte bis Tausende Franken zu viel an Prämien.',
+      },
+      {
+        title: 'Quellensteuer nicht korrigieren',
+        body: 'Expats verlieren oft Rückzahlungen aus der Quellensteuer, weil niemand sie darauf hinweist, was abgesetzt werden kann.',
+      },
+    ],
     howTitle: 'So läuft es ab',
     howSubtitle: 'Drei einfache Schritte — kein Papierkrieg, kein Fachchinesisch.',
     howSteps: [
       {
-        title: '15 Minuten buchen',
+        title: '30 Minuten buchen',
         body: 'Wählen Sie einen passenden Zeitpunkt. Das erste Gespräch ist kostenlos, auf Deutsch oder Englisch, ganz unverbindlich.',
       },
       {
@@ -123,27 +160,35 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     testimonialsSubtitle: 'Echtes Feedback von Expats, denen wir geholfen haben, ihre Finanzen in der Schweiz zu ordnen.',
     testimonials: [
       {
-        quote: 'David ist ein fantastischer Profi — kompetent und sorgfältig.',
+        quote: 'David hat uns bei der Krankenkasse, Steuererklärung und Säule 3a für unser erstes Jahr in Zürich kompetent und unabhängig beraten.',
         name: 'César Nombela',
         role: 'Associate Professor',
       },
       {
-        quote: 'Tiefes Fachwissen und ein transparenter Kommunikationsstil.',
+        quote: 'Als Expat brauchte ich jemanden, der mir KVG, Quellensteuer und Säule 3a auf Englisch verständlich erklärt. David macht das Komplexe einfach.',
         name: 'Aya Gosh',
         role: 'Unternehmerin',
       },
       {
-        quote: 'Kompetenz, Leidenschaft und Geduld.',
+        quote: 'David hat uns stundenlange Recherche erspart und dabei geholfen, teure Fehler in unserem ersten Jahr in der Schweiz zu vermeiden.',
         name: 'Sarah Robins',
         role: 'Sprecherin',
       },
+    ],
+    trustTitle: 'Warum Sie uns vertrauen können',
+    trustSubtitle: 'Finanzberatung ist Vertrauenssache — besonders für Menschen, die neu in der Schweiz sind.',
+    trustBadges: [
+      { title: 'Eidg. Fachausweis', desc: 'David ist Finanzplaner mit eidgenössischem Fachausweis — geprüfte Qualifikation in der Schweiz.' },
+      { title: 'Ansässig in Zürich', desc: 'Persönliche Beratung aus Zürich — online in der ganzen Schweiz, vor Ort nach Absprache.' },
+      { title: 'Swiss Privacy', desc: 'Ihre Daten unterliegen Schweizer Datenschutzrecht und werden nicht an Dritte weitergegeben.' },
+      { title: 'Wirklich unabhängig', desc: 'Keine Bindung an einen einzelnen Versicherer. Vergleiche über 60 Partnergesellschaften.' },
     ],
     faqTitle: 'Häufige Fragen',
     faqSubtitle: 'Das, was Expats uns am häufigsten fragen — direkt beantwortet.',
     faq: [
       {
         q: 'Was kostet das Erstgespräch?',
-        a: 'Nichts. Das erste 15-minütige Gespräch ist kostenlos und unverbindlich. Wir schauen gemeinsam, wo Sie stehen und was — wenn überhaupt — sich lohnt.',
+        a: 'Nichts. Das erste 30-minütige Gespräch ist kostenlos und unverbindlich. Wir schauen gemeinsam, wo Sie stehen und was — wenn überhaupt — sich lohnt.',
       },
       {
         q: 'Sind Sie wirklich unabhängig?',
@@ -164,8 +209,20 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     ],
     bookingTitle: 'Jetzt kostenloses Gespräch buchen',
     bookingSubtitle:
-      '15 Minuten, unverbindlich. Wir schauen gemeinsam, wo Sie heute stehen und was sich für Sie lohnt.',
-    footerNote: 'Ihre Angaben werden ausschliesslich zur Vorbereitung Ihres Gesprächs verwendet.',
+      '30 Minuten, unverbindlich. Wir schauen gemeinsam, wo Sie heute stehen und was sich für Sie lohnt.',
+    repeatedCtaTitle: 'Bereit, Ihre Schweizer Finanzen auf den richtigen Weg zu bringen?',
+    repeatedCtaSubtitle: 'Buchen Sie ein kostenloses, unverbindliches Erstgespräch — auf Deutsch oder Englisch.',
+    leadMagnetTitle: 'Noch nicht bereit für ein Gespräch?',
+    leadMagnetSubtitle:
+      'Laden Sie unsere kostenlose Checkliste herunter: „Expat Financial Checklist for Switzerland“ — Ihre wichtigsten To-dos für die ersten 12 Monate.',
+    leadMagnetCta: 'Checkliste gratis herunterladen',
+    leadMagnetInputLabel: 'E-Mail-Adresse',
+    leadMagnetPrivacy:
+      'Ihre E-Mail-Adresse wird ausschliesslich zum Versand der Checkliste verwendet und nicht an Dritte weitergegeben.',
+    leadMagnetSuccessTitle: 'Danke!',
+    leadMagnetSuccessBody:
+      'Wir haben Ihre E-Mail-Adresse erhalten. Sie können die Checkliste jetzt direkt hier ansehen und als PDF speichern.',
+    leadMagnetSuccessCta: 'Checkliste öffnen',
     footerCopyright: '© 2026 InsuFinance, Zürich. Alle Rechte vorbehalten.',
     footerImpressum: 'Impressum',
     footerPrivacy: 'Datenschutz',
@@ -180,7 +237,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       email: 'E-Mail-Adresse',
       postalCode: 'Postleitzahl',
       privacyNote:
-        'Ihre Angaben werden ausschliesslich zur Vereinbarung und Vorbereitung Ihres Termins verwendet und nicht an Dritte weitergegeben.',
+        'Ihre Angaben werden ausschliesslich zur Vereinbarung und Vorbereitung Ihres Termins verwendet und nicht an Dritte weitergegeben. Zur Optimierung erfassen wir pseudonymisiert, wie Sie mit diesem Formular interagieren.',
       submit: 'Weiter zur Terminwahl',
       submitting: 'Wird gesendet …',
       error: 'Bitte alle Felder korrekt ausfüllen.',
@@ -204,17 +261,38 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     headlineEmphasis: "You don't have to figure it out alone.",
     subheadline:
       'Health insurance, pensions, taxes, pillar funds — all new, all at once. Get a free first conversation with an independent financial planner who specializes in expats.',
-    ctaLabel: 'Book a free consultation',
+    ctaLabel: 'Book My Free 30-Min Call',
     secondaryCtaLabel: 'See how it works',
-    heroMicro: 'Free 15-minute intro call · No obligation · English & German',
+    heroMicro: 'Free 30-minute intro call · No obligation · English & German',
+    heroTrustBadges: [
+      'Independent · 60+ partners',
+      'Swiss Federal Diploma',
+      'Swiss privacy law',
+    ],
     painTitle: "Most mistakes don't come from not knowing. They come from nobody taking the time to walk you through it.",
     painBody:
       "Most people who move to Switzerland lose track fast: the wrong health insurance plan, missed deadlines, money sitting in a pension account nobody explained. A short conversation now can save you thousands of francs — and a lot of frustration — later.",
+    urgencyTitle: 'What happens if you do nothing?',
+    urgencySubtitle: 'Every quarter you wait is likely costing you money.',
+    urgencyPoints: [
+      {
+        title: 'Miss the pillar 3a deadline',
+        body: 'If you miss the annual contribution deadline, you leave tax savings on the table — often a four-figure amount for middle incomes.',
+      },
+      {
+        title: 'Keep the wrong health insurance',
+        body: 'The wrong model and deductible can cost expats hundreds to thousands of francs in extra premiums every year.',
+      },
+      {
+        title: 'Skip quellensteuer corrections',
+        body: 'Many expats miss quellensteuer refunds simply because no one tells them what can be deducted.',
+      },
+    ],
     howTitle: 'How it works',
     howSubtitle: 'Three simple steps — no paperwork marathons, no jargon.',
     howSteps: [
       {
-        title: 'Book 15 minutes',
+        title: 'Book 30 minutes',
         body: 'Pick a time that suits you. The first call is free, in English or German, with zero obligation.',
       },
       {
@@ -255,27 +333,35 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     testimonialsSubtitle: "Real feedback from expats we've helped settle their finances in Switzerland.",
     testimonials: [
       {
-        quote: 'David is a fantastic professional, knowledgeable, diligent.',
+        quote: 'David helped us sort out health insurance, tax filing, and pillar 3a for our first year in Zurich — competent and independent advice.',
         name: 'César Nombela',
         role: 'Associate Professor',
       },
       {
-        quote: 'Deep knowledge about the industry, with a transparent communication style.',
+        quote: 'As an expat, I needed someone who could explain KVG, quellensteuer, and pillar 3a to me in English. David makes the complex simple.',
         name: 'Aya Gosh',
         role: 'Entrepreneur',
       },
       {
-        quote: 'Competence, passion, and patience.',
+        quote: 'David saved us hours of research and helped us avoid expensive mistakes in our first year in Switzerland.',
         name: 'Sarah Robins',
         role: 'Voice Actor',
       },
+    ],
+    trustTitle: 'Why you can trust us',
+    trustSubtitle: 'Financial advice is a matter of trust — especially for people new to Switzerland.',
+    trustBadges: [
+      { title: 'Swiss Federal Diploma', desc: 'David is a financial planner with the Swiss Federal Diploma — certified expertise in Switzerland.' },
+      { title: 'Based in Zurich', desc: 'Personal advice from Zurich — online across Switzerland, in-person by arrangement.' },
+      { title: 'Swiss Privacy', desc: 'Your data is protected under Swiss privacy law and is not shared with third parties.' },
+      { title: 'Truly independent', desc: 'No ties to a single insurer. Comparisons across 60+ partner companies.' },
     ],
     faqTitle: 'Frequently asked questions',
     faqSubtitle: 'The things expats ask us most — answered up front.',
     faq: [
       {
         q: 'What does the first consultation cost?',
-        a: "Nothing. The first 15-minute conversation is free and without obligation. We'll map out where you stand and what — if anything — is worth doing next.",
+        a: "Nothing. The first 30-minute conversation is free and without obligation. We'll map out where you stand and what — if anything — is worth doing next.",
       },
       {
         q: 'Are you really independent?',
@@ -296,8 +382,20 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     ],
     bookingTitle: 'Book your free consultation',
     bookingSubtitle:
-      "15 minutes, no obligation. We'll map out where you stand today and what's worth doing next.",
-    footerNote: 'Your details are used exclusively to prepare for your conversation.',
+      "30 minutes, no obligation. We'll map out where you stand today and what's worth doing next.",
+    repeatedCtaTitle: 'Ready to get your Swiss finances on track?',
+    repeatedCtaSubtitle: 'Book a free, no-obligation first consultation — in English or German.',
+    leadMagnetTitle: 'Not ready to book a call?',
+    leadMagnetSubtitle:
+      "Download our free 'Expat Financial Checklist for Switzerland' — your most important to-dos for the first 12 months.",
+    leadMagnetCta: 'Get the free checklist',
+    leadMagnetInputLabel: 'Email address',
+    leadMagnetPrivacy:
+      'Your email address will only be used to send the checklist and is not shared with third parties.',
+    leadMagnetSuccessTitle: 'Thanks!',
+    leadMagnetSuccessBody:
+      'We have received your email address. You can view the checklist right here and save it as a PDF.',
+    leadMagnetSuccessCta: 'Open checklist',
     footerCopyright: '© 2026 InsuFinance, Zurich. All rights reserved.',
     footerImpressum: 'Impressum',
     footerPrivacy: 'Privacy Policy',
@@ -312,7 +410,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       email: 'Email address',
       postalCode: 'Postal code',
       privacyNote:
-        'Your details are used exclusively to arrange and prepare your appointment and are not shared with third parties.',
+        'Your details are used exclusively to arrange and prepare your appointment and are not shared with third parties. To optimize this form, we collect pseudonymized interaction data.',
       submit: 'Continue to pick a time',
       submitting: 'Sending …',
       error: 'Please fill in all fields correctly.',
