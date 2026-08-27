@@ -39,6 +39,7 @@ export function LeadMagnetForm({ t, onOpenChecklist }: LeadMagnetFormProps) {
       }
       setStatus('done');
       track('lead_magnet_success');
+      window.fbq?.('track', 'Lead', { value: 1 });
     } catch {
       setStatus('error');
       track('lead_magnet_error', { reason: 'exception' });

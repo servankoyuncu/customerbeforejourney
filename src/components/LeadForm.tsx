@@ -79,6 +79,7 @@ export function LeadForm({ t }: { t: LandingContent }) {
     }
     setStatus('done');
     track('form_success');
+    window.fbq?.('track', 'Lead', { value: 1 });
   }
 
   if (status === 'done') {
