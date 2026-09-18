@@ -2,7 +2,7 @@ import { useEffect, useState, type ButtonHTMLAttributes } from 'react';
 import { Link } from 'react-router-dom';
 import { LeadForm } from '../components/LeadForm';
 import { LeadMagnetForm } from '../components/LeadMagnetForm';
-import { ExpatChecklist } from '../components/ExpatChecklist';
+import { InvestmentGuide } from '../components/InvestmentGuide';
 import { LandingTrackingProvider, useLandingTracking } from '../context/LandingTrackingContext';
 import { LANDING_CONTENT, type Lang, type LandingContent } from './landingContent';
 import { useLang } from '../hooks/useLang';
@@ -195,7 +195,7 @@ export function LandingPage() {
               <div className="pointer-events-none absolute inset-x-[-4%] top-[8%] bottom-0 rounded-full bg-[radial-gradient(ellipse_at_50%_60%,rgba(15,118,110,0.16)_0%,rgba(45,212,191,0.08)_45%,transparent_70%)]" />
               <img
                 src={davidFrenkelPhoto}
-                alt="David Frenkel, independent financial planner for expats in Switzerland"
+                alt="David Frenkel, unabhängiger Finanzplaner für Anlagen in der Schweiz"
                 className="relative w-full max-w-[300px] drop-shadow-[0_24px_48px_rgba(15,23,42,0.14)] sm:max-w-[380px]"
               />
             </div>
@@ -426,7 +426,7 @@ export function LandingPage() {
               {!checklistOpen ? (
                 <LeadMagnetForm t={t} onOpenChecklist={() => setChecklistOpen(true)} />
               ) : (
-                <ExpatChecklist lang={lang} />
+                <InvestmentGuide lang={lang} />
               )}
             </div>
           </div>
