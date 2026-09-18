@@ -1,8 +1,6 @@
-import { useEffect, useState, type ButtonHTMLAttributes } from 'react';
+import { useEffect, type ButtonHTMLAttributes } from 'react';
 import { Link } from 'react-router-dom';
 import { LeadForm } from '../components/LeadForm';
-import { LeadMagnetForm } from '../components/LeadMagnetForm';
-import { InvestmentGuide } from '../components/InvestmentGuide';
 import { LandingTrackingProvider, useLandingTracking } from '../context/LandingTrackingContext';
 import { LANDING_CONTENT, type Lang, type LandingContent } from './landingContent';
 import { useLang } from '../hooks/useLang';
@@ -88,7 +86,6 @@ function SectionCta({ t }: { t: LandingContent }) {
 export function LandingPage() {
   const [lang, setLang] = useLang();
   const t = LANDING_CONTENT[lang];
-  const [checklistOpen, setChecklistOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -413,21 +410,6 @@ export function LandingPage() {
             </div>
             <div className="-mt-8 rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/10 sm:p-8">
               <LeadForm t={t} />
-            </div>
-          </div>
-        </section>
-
-        {/* Lead magnet */}
-        <section id="lead-magnet" className="border-t border-slate-200 bg-slate-50 px-6 py-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[1.85rem] font-extrabold text-slate-900 sm:text-3xl">{t.leadMagnetTitle}</h2>
-            <p className="mx-auto mt-3 max-w-xl text-[1.05rem] text-slate-500">{t.leadMagnetSubtitle}</p>
-            <div className="mt-8">
-              {!checklistOpen ? (
-                <LeadMagnetForm t={t} onOpenChecklist={() => setChecklistOpen(true)} />
-              ) : (
-                <InvestmentGuide lang={lang} />
-              )}
             </div>
           </div>
         </section>
