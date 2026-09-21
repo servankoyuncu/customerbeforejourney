@@ -55,11 +55,7 @@ export interface LandingContent {
   form: {
     firstName: string;
     lastName: string;
-    appointmentTypeQuestion: string;
-    appointmentTypeOnSite: string;
-    appointmentTypeOnline: string;
     phone: string;
-    email: string;
     postalCode: string;
     privacyNote: string;
     submit: string;
@@ -70,7 +66,6 @@ export interface LandingContent {
     successCta: string;
     errors: {
       required: string;
-      invalidEmail: string;
       invalidPhone: string;
       invalidPostalCode: string;
     };
@@ -234,11 +229,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     form: {
       firstName: 'Vorname',
       lastName: 'Nachname',
-      appointmentTypeQuestion: 'Wie möchtest du das Gespräch führen?',
-      appointmentTypeOnSite: 'Vor Ort',
-      appointmentTypeOnline: 'Online',
       phone: 'Telefonnummer',
-      email: 'E-Mail-Adresse',
       postalCode: 'Postleitzahl',
       privacyNote:
         'Deine Angaben werden ausschliesslich zur Vereinbarung und Vorbereitung deines Termins verwendet und nicht an Dritte weitergegeben. Zur Optimierung erfassen wir pseudonymisiert, wie du mit diesem Formular interagierst.',
@@ -250,7 +241,6 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       successCta: 'Termin auswählen',
       errors: {
         required: 'Pflichtfeld',
-        invalidEmail: 'Bitte eine gültige E-Mail-Adresse eingeben',
         invalidPhone: 'Bitte eine gültige Telefonnummer eingeben',
         invalidPostalCode: 'Bitte eine gültige 4-stellige Postleitzahl eingeben',
       },
@@ -411,11 +401,7 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
     form: {
       firstName: 'First name',
       lastName: 'Last name',
-      appointmentTypeQuestion: 'How would you like to meet?',
-      appointmentTypeOnSite: 'In-person',
-      appointmentTypeOnline: 'Online',
       phone: 'Phone number',
-      email: 'Email address',
       postalCode: 'Postal code',
       privacyNote:
         'Your details are used exclusively to arrange and prepare your appointment and are not shared with third parties. To optimize this form, we collect pseudonymized interaction data.',
@@ -427,7 +413,6 @@ export const LANDING_CONTENT: Record<Lang, LandingContent> = {
       successCta: 'Choose a time',
       errors: {
         required: 'Required',
-        invalidEmail: 'Please enter a valid email address',
         invalidPhone: 'Please enter a valid phone number',
         invalidPostalCode: 'Please enter a valid 4-digit postal code',
       },

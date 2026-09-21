@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useLandingTracking } from '../context/LandingTrackingContext';
 
-const SECTIONS = ['hero', 'how', 'services', 'about', 'faq', 'book'] as const;
+const SECTIONS = ['hero', 'how', 'faq', 'book'] as const;
 
 export function useLandingTrackingEvents(language: string) {
   const { track } = useLandingTracking();

@@ -39,9 +39,7 @@ export interface Database {
           p_first_name: string;
           p_last_name: string;
           p_phone: string;
-          p_email: string;
           p_postal_code: string;
-          p_appointment_type: string;
         };
         Returns: void;
       };
